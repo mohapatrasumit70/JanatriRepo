@@ -1,0 +1,20 @@
+package PageObjectModel;
+
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import BaseTest.Base;
+
+public class LoginTest extends Base{
+	
+	@Test
+    public void testI() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
+        
+        loginPage.enterUserId("sumit");
+        Thread.sleep(20000);
+        loginPage.enterUserPassword("password");
+        
+    }
+}

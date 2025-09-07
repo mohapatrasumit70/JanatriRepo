@@ -1,0 +1,34 @@
+package BaseTest;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Base {
+	public WebDriver driver;
+	@BeforeTest
+	public  void Before() {
+		
+	   WebDriverManager.chromedriver().setup();
+	   ChromeOptions options = new ChromeOptions();
+	   options.addArguments("--enable-notifications");
+	   driver= new ChromeDriver(options);
+	   driver.manage().window().maximize();
+	   driver.get("https://dev-dash.janitri.in/");
+	   driver.navigate().refresh();
+
+	   
+	  
+	  
+	}
+	@AfterTest
+	public void after() {
+		 driver.quit();
+	}
+
+}

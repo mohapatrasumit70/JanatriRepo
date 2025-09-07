@@ -1,0 +1,34 @@
+package PageObjectModel;
+
+
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
+
+import BaseTest.Base;
+
+public class LoginTest extends Base{
+	
+	@Test
+    public void testInvalidLoginShowErrorMsg() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
+        
+        loginPage.enterUserId("sumit");
+        
+        loginPage.enterUserPassword("password");
+        loginPage.ClickOnSubmitButton();
+     
+        driver.navigate().refresh();
+
+        String actualError = loginPage.InvalidMsg();
+        System.out.println(actualError);
+        String expectedError = "Invalid Credentials";
+        
+        Assert.assertEquals(expectedError, actualError, "Error message should match expected");
+        
+        Thread.sleep(2000);
+        
+    }
+}

@@ -1,0 +1,54 @@
+package PageObjectModel;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+import BaseTest.Base;
+
+public class LoginPage {
+	WebDriver driver;
+
+    @FindBy(id = "formEmail")
+    WebElement userid;
+    
+    @FindBy(id = "formPassword")
+    WebElement userPassword;
+    
+    @FindBy(xpath = " //button[@type='submit' and @class='login-button' and text()='Log In'] ")
+    WebElement clickButton;
+    
+    @FindBy(xpath = "//p[@class='normal-text' and text()='Invalid Credentials']")
+    WebElement invalidMessage;
+  
+  
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    
+    public void enterUserId(String username) {
+        userid.sendKeys(username);
+    }
+    public void enterUserPassword(String userpass) {
+    	userPassword.sendKeys(userpass);
+    }
+    public void ClickOnSubmitButton() {
+    	clickButton.click();
+    }
+    public String InvalidMsg() {
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(invalidMessage));
+    	return invalidMessage.getText();
+    }
+   
+	}
+
+

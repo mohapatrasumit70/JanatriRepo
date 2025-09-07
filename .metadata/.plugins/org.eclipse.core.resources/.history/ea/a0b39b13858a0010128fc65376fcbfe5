@@ -1,0 +1,25 @@
+package BaseTest;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Base {
+	WebDriver driver;
+	@BeforeTest
+	public  void Before() {
+		
+	   WebDriverManager.chromedriver().setup();
+	   
+	   driver= new ChromeDriver();
+	   driver.get("https://dev-dash.janitri.in/");
+	}
+	@AfterTest
+	public void after() {
+		 driver.quit();
+	}
+
+}

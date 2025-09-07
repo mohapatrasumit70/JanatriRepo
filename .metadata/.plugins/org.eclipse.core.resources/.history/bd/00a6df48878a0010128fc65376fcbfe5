@@ -1,0 +1,19 @@
+package PageObjectModel;
+
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+
+
+import BaseTest.Base;
+
+public class LoginTest extends Base{
+	
+	@Test
+    public void testI() {
+        LoginPage loginPage = new LoginPage(driver);
+        
+//        loginPage.enterUserId("sumit");
+//        loginPage.enterUserPassword("password");
+        
+    }
+}

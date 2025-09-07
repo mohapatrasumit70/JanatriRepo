@@ -1,0 +1,50 @@
+package BaseTest;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Base {
+	public static WebDriver driver;
+	@BeforeMethod
+	public  void setup() {
+		
+	   WebDriverManager.chromedriver().setup();
+
+	   ChromeOptions options = new ChromeOptions();
+
+       Map<String, Object> prefs = new HashMap<>();
+       prefs.put("profile.default_content_setting_values.notifications", 1);
+
+       options.setExperimentalOption("prefs", prefs);
+
+        driver = new ChromeDriver(options);
+
+       driver.get("https://dev-dash.janitri.in/");
+
+       driver.manage().window().maximize();
+       driver.navigate().refresh();
+
+
+	   
+	  
+	  
+	}
+	@AfterMethod
+	public void TearDown() {
+		 driver.quit();
+	}
+
+}
