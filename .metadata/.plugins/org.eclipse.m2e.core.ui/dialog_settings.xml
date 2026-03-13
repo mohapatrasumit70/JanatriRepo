@@ -2,6 +2,10 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Sumit\Downloads\Selenium-Test-Framework-main\Selenium-Test-Framework-main\src\main\java\com\orangehrm\pages\HomePage.java"/>
+			<item value="C:\Users\Sumit\Desktop\New folder\Janatri\src\test\java\PageObjectModel\LoginPage.java"/>
+			<item value="C:\Users\Sumit\Downloads\Selenium-Test-Framework-main\Selenium-Test-Framework-main\src\main\resources\config.properties"/>
+			<item value="C:\Users\Sumit\Desktop\New folder\Pratice\src\Interview\MainClass.java"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -13,6 +17,7 @@
 		</list>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="https://repo1.maven.org/maven2/archetype-catalog.xml"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -43,12 +48,10 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="com.janatri"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="Janatri"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -65,5 +68,22 @@
 	<section name="org.eclipse.m2e.core.pom.overview">
 	</section>
 	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\Sumit\Desktop\xLayer Test Cases\Selenium-Test-Framework-main\Selenium-Test-Framework-main"/>
+			<item value="C:\Users\Sumit\Desktop\xLayer Test Cases\Selenium-Test-Framework-main"/>
+			<item value="C:\Users\Sumit\Documents\SELENIUM KRUSHNA SEND ORIGINAL PROJECTES\olaProjects\ev-companion-app-automation"/>
+			<item value="C:\Users\Sumit\Downloads\restassured\src"/>
+			<item value="C:\Users\Sumit\Downloads\restassured-testng-framework\restassured-project"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
 	</section>
 </section>
